@@ -5,12 +5,20 @@
     "description": "Contacts API",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://webproject2-68vs.onrender.com/",
   "basePath": "/",
   "schemes": [
     "http"
   ],
-  "paths": {
+  "paths": 
+  {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
     "/characters": {
       "get": {
         "description": "",
