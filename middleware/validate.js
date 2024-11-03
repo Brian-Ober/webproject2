@@ -23,6 +23,26 @@ const saveCharacter = (req, res, next) => {
   });
 };
 
+const saveKingdom = (req, res, next) => {
+  const validationRule = {
+    
+    countryname: 'required|string',
+    aka: 'string',
+    capital: 'required|string'
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
 module.exports = {
-  saveCharacter
+  saveCharacter, saveKingdom
 };
